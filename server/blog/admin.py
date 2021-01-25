@@ -3,7 +3,7 @@ from .models import BlogPost
 
 
 class BlogPostAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title')
+    list_display = ('id', 'title', 'category', 'date_created')
     list_display_links = ('id', 'title')
     search_fields = ('id', 'title')
     list_per_page = 25
