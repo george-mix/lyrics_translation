@@ -6,6 +6,7 @@ import AllSongs from './components/AllSongs';
 import Category from './components/Category';
 import SongDetail from './components/SongDetail';
 
+import './sass/main.scss';
 
 
 const App = () => (

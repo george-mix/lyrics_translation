@@ -1,0 +1,47 @@
+.position {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo {
+       &__link { 
+           color: $color-white;
+           font-size: 2.6rem;
+           font-weight: 700;
+           text-transform: uppercase;
+
+        }
+    }
+
+    &__nav {
+        
+        &__list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__link {
+                padding: 0 1rem;
+
+                &__navlink {
+                    color: $color-white;
+
+                    &:hover {
+                        color: $color-main;
+                    }
+                }
+            }
+        }
+    }
+}
