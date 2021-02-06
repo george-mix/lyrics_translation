@@ -1,1 +1,11 @@
+.songs {
 
+    .help {
+        margin: 2rem;
+
+        &__category {
+            text-align: center;
+            color: $color-grey;
+        }
+    }
+}

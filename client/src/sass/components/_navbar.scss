@@ -1,47 +1,85 @@
-.position {
-    position: absolute;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-
-.header {
-    position: fixed;
+.navbar {
+    background-color: $color-black;
     width: 100%;
-    z-index: 10;
-    height: 12rem;
+    height: 4rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
 
-    &__logo {
-       &__link { 
-           color: $color-white;
-           font-size: 2.6rem;
-           font-weight: 700;
-           text-transform: uppercase;
+    &__leftside {
+        flex: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        text-transform: uppercase;
+        font-weight: 600;
 
+        a {
+            margin: 0 2rem;
         }
     }
+    
+    &__rightside {
+        flex: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
 
-    &__nav {
-        
-        &__list {
+
+
+        & i {
             display: flex;
+            margin: 0 2rem;
+            color: $color-white; 
+            cursor: pointer;  
+        }
+
+        #awake {
+            @include breakpoint(tablet) {
+                display: none;
+            }
+        }
+
+        #hidden {
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            top: 4rem;
+            max-height: 100vh;
+            height: 100vh;
+            width: 100%;
+            background-color: $color-black;
             align-items: center;
-            justify-content: center;
+            
+           
+            
+            & a {
+                font-size: 2rem;
+                margin: 1rem;
+            }
+        }
 
-            &__link {
-                padding: 0 1rem;
+        &__links  {
+            max-height: 80px;
+            display: none;
+            margin-right: 2rem;
 
-                &__navlink {
-                    color: $color-white;
 
-                    &:hover {
-                        color: $color-main;
-                    }
+            @include breakpoint(tablet) {
+                display: flex !important;
+            }
+            & a {
+                margin-left: 1.5rem;
+
+                @include breakpoint(tablet) {
+                    font-size: 1.6rem;
                 }
+
             }
         }
     }
+
 }
+

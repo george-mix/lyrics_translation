@@ -58,29 +58,17 @@ const AllSongs = () => {
     };
 
     return (
-        <div className="songs">
-            <div className="sidebar">
-                <nav className="sidebar__nav">
-                    <Link className="sidebar__nav__link" exact to="category/1950">1950</Link>
-                    <Link className="sidebar__nav__link" exact to="category/1960">1960</Link>
-                    <Link className="sidebar__nav__link" exact to="category/1970">1970</Link>
-                    <Link className="sidebar__nav__link" exact to="category/1980">1980</Link>
-                    <Link className="sidebar__nav__link" exact to="category/1990">1990</Link>
-                    <Link className="sidebar__nav__link" exact to="category/2000">2000</Link>
-                    <Link className="sidebar__nav__link" exact to="category/2010">2010</Link>
-                    <Link className="sidebar__nav__link" exact to="category/2020">2020</Link>
-                </nav>
-            </div>
-            <div className="help">
-                <h1 className="help__category">All Songs</h1>
+        <div >
+            <div className="songs">
+                <main className="songs__all container">
+                    <div className="help">
+                        <h1 className="help__category">All Songs</h1>
 
-                <div className="help__info">
-                    <h2 className="help__info__pointer">Title</h2>
-                    <h2 className="help__info__pointer">Categories</h2>
-                </div>
-            </div>
+                    </div>
 
-            <div >{getSongs()}</div>
+                    <div >{getSongs()}</div>
+                </main>
+            </div>
         </div>
 
     );

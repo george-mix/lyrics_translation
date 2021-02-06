@@ -1,15 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AllSongs from './AllSongs';
 
 const Home = () => {
     return (
-        <div className="home">
-            <section className="home__content container">
-                <div className="home__content__wrapper">
-                    <h1 className="home__content__slogan">Check our lyrics collection</h1>
-                    <Link className="home__content__button" to="/songs">Check</Link>
+        <div>
+            <header>
+                <div className="landing">
+                    <div className="landing__search">
+                        <h2>Search for lyrics</h2>
+                        <input type="text" placeholder="Search..." />
+                    </div>
                 </div>
-            </section>
+            </header>
+            <main>
+                <AllSongs />
+            </main>
         </div>
     )
 };

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 
 const Category = (props) => {
     const [songs, setSongs] = useState([]);
@@ -9,6 +11,7 @@ const Category = (props) => {
     useEffect(() => {
         const category = props.match.params.id;
         setCurrentCategory(category);
+
 
         const config = {
             headers: {
@@ -62,20 +65,12 @@ const Category = (props) => {
 
     return (
         <div>
-            <h3>{currentCategory} Category</h3>
+            <Navbar />
+            <Sidebar />
             <div>
-                <nav>
-                    <Link exact to="/category/1950">1950</Link>
-                    <Link exact to="/category/1960">1960</Link>
-                    <Link exact to="/category/1970">1970</Link>
-                    <Link exact to="/category/1980">1980</Link>
-                    <Link exact to="/category/1990">1990</Link>
-                    <Link exact to="/category/2000">2000</Link>
-                    <Link exact to="/category/2010">2010</Link>
-                    <Link exact to="/category/2020">2020</Link>
-                </nav>
+                <h3>{currentCategory} Category</h3>
+                {getCategorySongs()}
             </div>
-            {getCategorySongs()}
         </div>
     );
 };

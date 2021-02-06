@@ -1,21 +1,27 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+    const [showLinks, setShowLinks] = useState(false);
+
+    const handleClick = () => setShowLinks(!showLinks);
+    const closeMobileMenu = () => setShowLinks(false);
+
+
     return (
-        <div className="position">
-            <header className="header container">
-                <div className="header__logo">
-                    <Link className="header__logo__link" to="/">Osoka</Link>
+        <div className="navbar">
+            <div className="navbar__leftside">
+                <Link>osoka</Link>
+            </div>
+            <div className="navbar__rightside">
+                <div className="navbar__rightside__links" id={showLinks ? "hidden" : ""}>
+                    <NavLink onClick={closeMobileMenu} to="/">Home</NavLink>
+                    <NavLink onClick={closeMobileMenu} to="/songs">Songs</NavLink>
                 </div>
-                <nav className="header__nav">
-                    <ul className="header__nav__list">
-                        <li className="header__nav__list__link"><NavLink className="header__nav__list__link__navlink"
-                            to="/">Home</NavLink></li>
-                        <li className="header__nav__list__link"><NavLink className="header__nav__list__link__navlink" to="/songs">Songs</NavLink></li>
-                    </ul>
-                </nav>
-            </header>
+                <div>
+                    <i id={showLinks ? "" : "awake"} className={showLinks ? "fas fa-times" : "fas fa-bars"} onClick={handleClick} />
+                </div>
+            </div>
         </div>
     );
 };

@@ -15,14 +15,23 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Montserrat', sans-serif;
-    color: $color-white;
-    
+    background-color: $color-white;
+    color: $color-black;
 }
 
 a {
     text-decoration: none;
+    color: $color-white;
     display: inline-block;
 }
+
+button:hover {
+    cursor: pointer;
+}
+
+
+
+
 
 
 

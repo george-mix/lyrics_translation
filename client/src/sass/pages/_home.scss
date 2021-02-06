@@ -1,10 +1,15 @@
-.home {
-    height: 100vh;
+.landing {
+    
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
     background: url("../img/style-3411108_1920.jpg") center/cover;
     position: relative;
     z-index: 1;
     overflow: hidden;
     animation: hue 10s infinite alternate;
+    justify-content: center;
+    align-items: center;
 
     &::after {
         content: "";
@@ -19,32 +24,8 @@
         transform: scale(1.15);
     }
 
-    &__content {
-        display: flex;
-        align-items: center;
-        height: 100vh;
-
-        &__wrapper {
-            max-width: 40rem;
-            transform: translateY(-2rem);
-
-        }
-
-        &__slogan {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        &__button {
-            padding: 1rem 2.5rem;
-            border: 2px solid rgba($color-grey, 0.5);
-            border-radius: 2.5rem;
-            color: $color-white;
-
-            &:hover {
-                background-color: $color-main;
-            }
-        }
+    h2 {
+        color: $color-white;
     }
 }
 
