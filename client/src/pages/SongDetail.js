@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
-import Sidebar from './Sidebar';
 
 const SongDetail = (props) => {
     const [song, setSong] = useState({});
@@ -29,8 +27,6 @@ const SongDetail = (props) => {
 
     return (
         <div>
-            <Navbar />
-            <Sidebar />
             <div>
                 <h1>{song.name_eng}</h1>
                 <h1>{song.name_rus}</h1>

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import AllSongs from './AllSongs';
+import AllSongs from '../components/AllSongs';
 
 const Home = () => {
     return (

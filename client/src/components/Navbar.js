@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -11,12 +11,11 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="navbar__leftside">
-                <Link>osoka</Link>
+                <Link to="/">osoka</Link>
             </div>
             <div className="navbar__rightside">
                 <div className="navbar__rightside__links" id={showLinks ? "hidden" : ""}>
                     <NavLink onClick={closeMobileMenu} to="/">Home</NavLink>
-                    <NavLink onClick={closeMobileMenu} to="/songs">Songs</NavLink>
                 </div>
                 <div>
                     <i id={showLinks ? "" : "awake"} className={showLinks ? "fas fa-times" : "fas fa-bars"} onClick={handleClick} />
@@ -25,5 +24,8 @@ const Navbar = () => {
         </div>
     );
 };
+
+
+
 
 export default Navbar;

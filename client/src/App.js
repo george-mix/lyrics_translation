@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home';
+import Home from './pages/Home';
 import AllSongs from './components/AllSongs';
-import Category from './components/Category';
-import SongDetail from './components/SongDetail';
+import Category from './pages/Category';
+import SongDetail from './pages/SongDetail';
 import NoMatch from './components/NoMatch';
 import Navbar from './components/Navbar';
 

@@ -27,13 +27,14 @@ const AllSongs = () => {
             return list.push(
                 <article className="song">
                     <div className="song__box">
-                        <div className="song__box__title">
-                            <h3 className="song__box__title__name"><Link to={`/song/${song.slug}`}>{song.title}</Link></h3>
+                        <div className="song__box__left">
+                            <Link className="song__box__left__link" to={`/song/${song.slug}`}>
+                                <h3 className="song__box__left__title">{song.title}</h3>
+                                <p className="song__box__left__author">{song.excerpt}</p>
+                            </Link>
                         </div>
-                        <div className="song__box__column">
-                            <p className="song__box__column__details">{song.excerpt}</p>
-                            <strong className="song__box__column__category">{song.category}</strong>
-                            <Link className="song__box__column__button" to={`/song/${song.slug}`}>Read</Link>
+                        <div className="song__box__right">
+                            <strong className="song__box__rigth__category">{song.category}</strong>
                         </div>
                     </div>
                 </article>
@@ -43,11 +44,11 @@ const AllSongs = () => {
 
         for (let i = 0; i < list.length; i += 2) {
             result.push(
-                <div className="songs__songlist" key={i}>
-                    <div className="songs__songlist__article">
+                <div key={i}>
+                    <div >
                         {list[i]}
                     </div>
-                    <div className="songs__songlist__article">
+                    <div >
                         {list[i + 1] ? list[i + 1] : null}
                     </div>
                 </div>
@@ -61,12 +62,11 @@ const AllSongs = () => {
         <div >
             <div className="songs">
                 <main className="songs__all container">
-                    <div className="help">
-                        <h1 className="help__category">All Songs</h1>
-
+                    <div className="songs__all__help">
+                        <h1 className="songs__all__help__category">All Songs</h1>
                     </div>
 
-                    <div >{getSongs()}</div>
+                    <div className="list">{getSongs()}</div>
                 </main>
             </div>
         </div>
