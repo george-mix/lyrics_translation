@@ -3,14 +3,14 @@ from datetime import datetime
 
 
 class Categories(models.TextChoices):
-    FIFTIES = '1950'
-    SIXTIES = '1960'
-    SEVENTIES = '1970'
-    EIGHTIES = '1980'
-    NINETIES = '1990'
-    ZERO = '2000'
-    TEENS = '2010'
-    TWENTIES = '2020'
+    FIFTIES = '1950-1959'
+    SIXTIES = '1960-1969'
+    SEVENTIES = '1970-1979'
+    EIGHTIES = '1980-1989'
+    NINETIES = '1990-1999'
+    ZERO = '2000-2009'
+    TEENS = '2010-2019'
+    TWENTIES = '2020+'
 
 
 class BlogPost(models.Model):
