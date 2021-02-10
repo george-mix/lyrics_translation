@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { Categories } from './Categories';
 
-const Dropdown = (props) => {
+const Dropdown = ({ setClose }) => {
     const [click, setClick] = useState(false);
 
     const handleClick = () => setClick(!click);
@@ -20,7 +20,7 @@ const Dropdown = (props) => {
                             <Link
                                 className={item.cName}
                                 to={item.path}
-                                onClick={() => setClick(!click)}
+                                onClick={() => setClose(false)}
                             >
                                 {item.title}
                             </Link>

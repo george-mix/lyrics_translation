@@ -7,11 +7,11 @@ const Navbar = () => {
     const [dropdown, setDropdown] = useState(false);
 
     const handleClick = () => setShowLinks(!showLinks);
+
     const closeMobileMenu = () => setShowLinks(false);
+    const closeCategoriesMenu = () => setDropdown(false);
 
     const onMouseClick = () => setDropdown(!dropdown);
-
-
 
     return (
         <div className="navbar">
@@ -21,10 +21,10 @@ const Navbar = () => {
             <div className="navbar__rightside">
                 <ul className="navbar__rightside__links" id={showLinks ? "show" : ""}>
                     <li className="navbar__rightside__links__item">
-                        <Link onClick={closeMobileMenu} to="/">Home</Link>
+                        <Link onClick={() => { closeMobileMenu(); closeCategoriesMenu(); }} to="/">Home</Link>
                     </li>
                     <li className="navbar__rightside__links__item">
-                        <Link onClick={closeMobileMenu} to="/songs">Songs</Link>
+                        <Link onClick={() => { closeMobileMenu(); closeCategoriesMenu(); }} to="/songs">Songs</Link>
                     </li>
                     <li
                         onClick={onMouseClick}
@@ -32,7 +32,7 @@ const Navbar = () => {
                         <Link className="navbar__rightside__links__item dropdown__link">
                             Categories <i id="down" class="fas fa-caret-down"></i>
                         </Link>
-                        {dropdown && <Dropdown />}
+                        {dropdown && <Dropdown setClose={setShowLinks} />}
                     </li>
                 </ul>
                 <div>

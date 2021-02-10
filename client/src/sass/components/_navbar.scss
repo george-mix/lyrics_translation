@@ -88,6 +88,10 @@
                     align-items: center;
                     flex-direction: column;
 
+                    &__link {
+                        padding: 0;
+                    }
+
                     #down {
                         margin-right: 0.5rem;
                         margin-left: 0.5rem;
