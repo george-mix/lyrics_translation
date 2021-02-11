@@ -55,7 +55,7 @@
             
            
             
-            & a {
+            & a, .dropdown__link {
                 font-size: 2rem;
                 margin: 1rem;
             }
@@ -67,7 +67,7 @@
             margin-right: 2rem;
 
             @include breakpoint(tablet) {
-                display: flex !important;
+                display: flex ;
             }
 
             &__item{
@@ -76,7 +76,7 @@
                 align-items: center;
                 padding-left: 1.5rem;
 
-                & a {                   
+                & a, .dropdown__link  {                   
                     @include breakpoint(tablet) {
                         font-size: 1.6rem;
                     }
@@ -89,6 +89,8 @@
                     flex-direction: column;
 
                     &__link {
+                        color: $color-white;
+                        cursor: pointer;
                         padding: 0;
                     }
 

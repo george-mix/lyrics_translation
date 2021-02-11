@@ -1,56 +1,13 @@
-.songs {
-
-
-    &__all {
-        max-width: 70rem;
-
-        &__help {
-            margin: 2rem;
-
-            &__category {
-                text-align: center;
-                color: $color-grey;
-            }
-        }        
-    }  
-}
-
-.song {
-    border-bottom: 2px solid rgba($color-grey, 0.3);
-    padding: 2rem 0;
+.allsongs {
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 1rem;
     
-    &:hover {
-        background-color: rgba($color-grey, 0.2);
-    }
 
-    &__box {
-        display: flex;
-
-        &__left {
-            flex: 70%;
-
-            &__link {
-                position: relative;
-                width: 100%;
-                height: 100%;
-
-            }
-
-            &__title {
-                color: $color-black;
-                font-weight: 600;
-            }
-
-            &__author {
-                color: $color-grey;
-            }
-        }
-
-        &__right {
-            color: $color-main;
-        }
+    &__header {
+        padding: 2rem;
+        color: $color-grey;
     }
 
 }
-.list {
-margin-bottom: 30rem;}

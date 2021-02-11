@@ -12,9 +12,9 @@ const Home = () => {
                     </div>
                 </div>
             </header>
-            <main>
+            <section className="content">
                 <AllSongs />
-            </main>
+            </section>
         </div>
     )
 };
