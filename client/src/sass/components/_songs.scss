@@ -11,21 +11,34 @@
     grid-gap: 1rem;
     background-color: rgba($color-grey, 0.05);
     padding: 0.5rem;
+    grid-auto-rows: minmax(5rem, auto);
+    position: relative;
 
     &__link {
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        position: absolute;
+        min-width: 0px;
+        line-height: 1.125;
+        grid-column: 1 / 2;
+        width: 100%;
+        
 
         h3 {
             font-size: 1.6rem;
             font-weight: 600;
+            overflow-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
         }
     
         p {
-            display: inline-block;
             font-size: 1.4rem;
+            overflow-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
         }
     }
 
@@ -34,5 +47,6 @@
         color:rgba($color-main, 0.85);
         align-self: center;
         justify-self: end;
+        grid-column: 2 / 3; 
     }
 }
