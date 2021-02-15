@@ -34,25 +34,21 @@ const Category = (props) => {
 
         songs.map(song => {
             return list.push(
-                <div>
-                    <div>
-                        <strong>{song.category}</strong>
-                        <h3>{song.title}</h3>
-                        <p>{song.excerpt}</p>
-                        <Link to={`/song/${song.slug}`}>Read</Link>
-                    </div>
-                </div>
+                <article className="song">
+                    <Link className="song__link" to={`/song/${song.slug}`}>
+                        <h3 >{song.title}</h3>
+                        <p >{song.excerpt}</p>
+                    </Link>
+                    <strong >{song.category}</strong>
+                </article>
             )
         });
 
-        for (let i = 0; i < list.length; i += 2) {
+        for (let i = 0; i < list.length; i++) {
             result.push(
                 <div key={i}>
                     <div>
                         {list[i]}
-                    </div>
-                    <div>
-                        {list[i + 1] ? list[i + 1] : null}
                     </div>
                 </div>
             );
@@ -62,11 +58,11 @@ const Category = (props) => {
     };
 
     return (
-        <div>
-            <div>
-                <h3>Category {currentCategory}</h3>
-                {getCategorySongs()}
+        <div className="allsongs content">
+            <div className="center--color">
+                <h3 className="allsongs__header">Category: <span className="allsongs__header__category">{currentCategory}</span></h3>
             </div>
+            {getCategorySongs()}
         </div>
     );
 };

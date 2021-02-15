@@ -4,10 +4,16 @@
     flex-direction: column;
     padding: 4rem 1rem;
     
-
+    
     &__header {
         padding: 2rem;
         color: $color-grey;
+        text-align: center;
+
+        &__category {
+            display: inline-block;
+            color: $color-main;
+        }
     }
 
 }

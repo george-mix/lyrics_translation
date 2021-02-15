@@ -14,14 +14,14 @@ class Categories(models.TextChoices):
 
 
 class BlogPost(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=150)
     name_rus = models.CharField(max_length=50)
     name_eng = models.CharField(max_length=50)
     name_tr = models.CharField(max_length=50)
     slug = models.CharField(max_length=50, unique=True)
     category = models.CharField(
         max_length=20, choices=Categories.choices, default=Categories.TWENTIES)
-    excerpt = models.CharField(max_length=150)
+    author = models.CharField(max_length=150)
     content_rus = models.TextField()
     content_eng = models.TextField()
     content_transliter = models.TextField()

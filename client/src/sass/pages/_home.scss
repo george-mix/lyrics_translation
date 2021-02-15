@@ -33,6 +33,14 @@
         border: none;
         width: auto;
     }
+
+    @include breakpoint(desktop) {
+        height: 40vh;
+    }
+}
+
+.home {
+    padding: 0rem 1rem;
 }
 
 @keyframes hue {

@@ -4,7 +4,7 @@ import AllSongs from '../components/AllSongs';
 const AllSongsPage = () => {
     return (
         <div className="allsongs content">
-            <div className="center">
+            <div className="center--color">
                 <h2 className="allsongs__header">All Songs</h2>
             </div>
             <AllSongs />

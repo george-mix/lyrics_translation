@@ -12,9 +12,12 @@ const Home = () => {
                     </div>
                 </div>
             </header>
-            <section className="content">
+            <div className="home content">
+                <div className="center--color">
+                    <h2 className="allsongs__header">All Songs</h2>
+                </div>
                 <AllSongs />
-            </section>
+            </div>
         </div>
     )
 };

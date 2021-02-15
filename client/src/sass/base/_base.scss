@@ -53,6 +53,11 @@ button:hover {
 .center {
     display: flex;
     justify-content: center;
+
+    &--color {
+        background-color: rgba($color-grey, 0.05);
+        border-radius: 0.5rem;
+    }
 }
 
 
