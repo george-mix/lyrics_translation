@@ -64,7 +64,7 @@ const Category = (props) => {
     return (
         <div>
             <div>
-                <h3>{currentCategory} Category</h3>
+                <h3>Category {currentCategory}</h3>
                 {getCategorySongs()}
             </div>
         </div>
