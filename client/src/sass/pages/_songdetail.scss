@@ -64,7 +64,7 @@
 
 .titles {
     padding-top: 1rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 
     
 
@@ -73,7 +73,26 @@
     }
 }
 
+.buttons {
+    padding-bottom: 1rem;
 
+    &__button {
+        justify-self: center;
+        border: 0.1rem solid $color-main;
+        width: 4rem;
+        height: 4rem;
+        background-color: $color-white;
+        border-radius: 50%;
+
+        &:focus {
+            outline: none;
+        }
+
+        i {
+        font-size: 2rem;
+        }
+    }
+}
 
 .container {
     border-bottom: 0.1rem solid rgba($color-grey, 0.3);
@@ -100,3 +119,4 @@
 .hidden {
     display: none;
 }
+

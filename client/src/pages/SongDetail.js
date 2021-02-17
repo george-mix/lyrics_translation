@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 
 const SongDetail = (props) => {
     const [song, setSong] = useState({});
+
     const [change, setChange] = useState(false);
-
     const changeTranslationOnClick = () => setChange(!change);
-
 
     useEffect(() => {
         const slug = props.match.params.id;
@@ -51,7 +50,7 @@ const SongDetail = (props) => {
             <div className="original">
                 <div className="original__credit">
                     <h1>{song.title}</h1>
-                    <h2>{song.excerpt}</h2>
+                    <h2>{song.author}</h2>
                 </div>
                 <div className="original__additional">
                     <div className="original__additional__category">
@@ -68,7 +67,9 @@ const SongDetail = (props) => {
                 </div>
                 <h1 className="titles__title center">{song.name_eng}</h1>
             </div>
-            <button onClick={changeTranslationOnClick}>click</button>
+            <div className="details--grid buttons">
+                <button onClick={changeTranslationOnClick} className="buttons__button"><i className="fab fa-buffer"></i></button>
+            </div>
             <div className="lyrics">
                 {splitContent(song.content_rus, song.content_eng, song.content_transliter)}
             </div>

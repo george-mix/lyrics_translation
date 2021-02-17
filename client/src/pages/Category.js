@@ -37,7 +37,7 @@ const Category = (props) => {
                 <article className="song">
                     <Link className="song__link" to={`/song/${song.slug}`}>
                         <h3 >{song.title}</h3>
-                        <p >{song.excerpt}</p>
+                        <p >{song.author}</p>
                     </Link>
                     <strong >{song.category}</strong>
                 </article>
