@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const SongDetail = (props) => {
     const [song, setSong] = useState({});
@@ -47,6 +48,9 @@ const SongDetail = (props) => {
 
     return (
         <div className="allsongs content">
+            <Helmet>
+                <title>{`${song.title}`} by {`${song.author}`} </title>
+            </Helmet>
             <div className="original">
                 <div className="original__credit">
                     <h1>{song.title}</h1>

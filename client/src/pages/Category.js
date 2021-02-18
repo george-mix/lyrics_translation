@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Category = (props) => {
     const [songs, setSongs] = useState([]);
@@ -59,6 +60,9 @@ const Category = (props) => {
 
     return (
         <div className="allsongs content">
+            <Helmet>
+                <title>Category: {currentCategory}</title>
+            </Helmet>
             <div className="center--color">
                 <h3 className="allsongs__header">Category: <span className="allsongs__header__category">{currentCategory}</span></h3>
             </div>

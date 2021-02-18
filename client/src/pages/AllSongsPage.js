@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Helmet from 'react-helmet';
 import AllSongs from '../components/AllSongs';
 
 const AllSongsPage = () => {
@@ -20,6 +21,9 @@ const AllSongsPage = () => {
     }, []);
     return (
         <div className="allsongs content">
+            <Helmet>
+                <title>All Songs</title>
+            </Helmet>
             <div className="center--color">
                 <h2 className="allsongs__header">All Songs</h2>
             </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Helmet from 'react-helmet';
 import AllSongs from '../components/AllSongs';
 
 const Home = () => {
@@ -29,6 +30,9 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Osoka</title>
+            </Helmet>
             <header>
                 <div className="landing">
                     <div className="landing__search">
