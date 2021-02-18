@@ -1,23 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AllSongs = () => {
-    const [songs, setSongs] = useState([]);
-
-    useEffect(() => {
-        const fetchSongs = async () => {
-            try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/`);
-                setSongs(res.data);
-            }
-            catch (err) {
-
-            }
-        };
-
-        fetchSongs();
-    }, []);
+const AllSongs = ({songs}) => {
 
     const getSongs = () => {
         let list = [];

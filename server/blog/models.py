@@ -15,16 +15,16 @@ class Categories(models.TextChoices):
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=150)
+    author = models.CharField(max_length=150)
     name_rus = models.CharField(max_length=50)
-    name_eng = models.CharField(max_length=50)
     name_tr = models.CharField(max_length=50)
+    name_eng = models.CharField(max_length=50)
     slug = models.CharField(max_length=50, unique=True)
     category = models.CharField(
         max_length=20, choices=Categories.choices, default=Categories.TWENTIES)
-    author = models.CharField(max_length=150)
     content_rus = models.TextField()
-    content_eng = models.TextField()
     content_transliter = models.TextField()
+    content_eng = models.TextField()
     date_created = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
