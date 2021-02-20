@@ -1,25 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useContext } from 'react';
 import Helmet from 'react-helmet';
 import AllSongs from '../components/AllSongs';
+import { SongContext } from '../components/SongContext';
 
 const Home = () => {
-    const [songs, setSongs] = useState([]);
+    const [songs] = useContext(SongContext);
     const [q, setQ] = useState("");
-
-    useEffect(() => {
-        const fetchSongs = async () => {
-            try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/`);
-                setSongs(res.data);
-            }
-            catch (err) {
-
-            }
-        };
-
-        fetchSongs();
-    }, []);
 
     const search = (rows) => {
         return rows.filter(
@@ -36,7 +22,7 @@ const Home = () => {
             <header>
                 <div className="landing">
                     <div className="landing__search">
-                        <h2>Search for lyrics</h2>
+                        <h2>Search Lyrics</h2>
                         <form className="landing__search__box center">
                             <div className="landing__search__box__input">
                                 <i className="fas fa-search"></i>

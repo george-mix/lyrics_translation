@@ -19,7 +19,7 @@ const Dropdown = ({ setClose }) => {
                         <li key={index}>
                             <Link
                                 className={item.cName}
-                                to={item.path}
+                                to={`/category${item.path}`}
                                 onClick={() => setClose(false)}
                             >
                                 {item.title}

@@ -6,6 +6,7 @@ import Category from './pages/Category';
 import SongDetail from './pages/SongDetail';
 import NoMatch from './components/NoMatch';
 import Navbar from './components/Navbar';
+import { SongProvider } from './components/SongContext';
 
 import './sass/main.scss';
 
@@ -13,13 +14,15 @@ import './sass/main.scss';
 const App = () => (
     <Router>
         <Navbar />
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/songs" component={AllSongsPage} />
-            <Route exact path="/song/:id" component={SongDetail} />
-            <Route exact path="/:id" component={Category} />
-            <Route component={NoMatch} />
-        </Switch>
+        <SongProvider>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/songs" component={AllSongsPage} />
+                <Route exact path="/song/:id" component={SongDetail} />
+                <Route exact path="/category/:id" component={Category} />
+                <Route component={NoMatch} />
+            </Switch>
+        </SongProvider>
     </Router>
 );
 
