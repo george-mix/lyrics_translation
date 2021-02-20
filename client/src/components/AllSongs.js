@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom';
 
-const AllSongs = ({songs}) => {
+const AllSongs = ({ songs }) => {
+    const [currentPage, setCurrentPage] = useState(0);
 
     const getSongs = () => {
         let list = [];
@@ -33,9 +35,40 @@ const AllSongs = ({songs}) => {
         return result;
     };
 
+    const PER_PAGE = 10;
+
+    const handlePageClick = ({ selected: selectedPage }) => {
+        setCurrentPage(selectedPage);
+    }
+
+    const offset = currentPage * PER_PAGE;
+
+    const currentPageData = getSongs()
+        .slice(offset, offset + PER_PAGE)
+        .map(song => {
+            return (
+                <div>
+                    {song}
+                </div>
+            )
+        });
+
+    const pageCount = Math.ceil(songs.length / PER_PAGE);
+
     return (
         <div className="list">
-            {getSongs()}
+            {currentPageData}
+            <ReactPaginate
+                previousLabel={"← Previous"}
+                nextLabel={"Next →"}
+                pageCount={pageCount}
+                onPageChange={handlePageClick}
+                containerClassName={"pagination"}
+                previousLinkClassName={"pagination__link"}
+                nextLinkClassName={"pagination__link"}
+                disabledClassName={"pagination__link--disabled"}
+                activeClassName={"pagination__link--active"}
+            />
         </div>
 
     );
