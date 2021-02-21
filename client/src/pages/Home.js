@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import AllSongs from '../components/AllSongs';
 import { SongContext } from '../components/SongContext';
 
@@ -11,7 +11,8 @@ const Home = () => {
         return rows.filter(
             (row) =>
                 row.title.toLowerCase().indexOf(q) > -1 ||
-                row.author.toLowerCase().indexOf(q) > -1)
+                row.author.toLowerCase().indexOf(q) > -1 ||
+                row.category.indexOf(q) > - 1)
     };
 
     return (

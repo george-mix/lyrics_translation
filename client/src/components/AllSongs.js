@@ -45,9 +45,9 @@ const AllSongs = ({ songs }) => {
 
     const currentPageData = getSongs()
         .slice(offset, offset + PER_PAGE)
-        .map(song => {
+        .map((song, index) => {
             return (
-                <div>
+                <div key={index}>
                     {song}
                 </div>
             )
@@ -59,8 +59,8 @@ const AllSongs = ({ songs }) => {
         <div className="list">
             {currentPageData}
             <ReactPaginate
-                previousLabel={"← Previous"}
-                nextLabel={"Next →"}
+                previousLabel={"←"}
+                nextLabel={"→"}
                 pageCount={pageCount}
                 onPageChange={handlePageClick}
                 containerClassName={"pagination"}
