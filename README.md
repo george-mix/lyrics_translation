@@ -1,5 +1,6 @@
 # Lyrics Translation Website
 
+<img src="https://github.com/george-mix/lyrics_translation/blob/master/example.gif?raw=true" alt="example.gif" width="200" height="400"  >
 
 ## Overview
 
